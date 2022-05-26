@@ -1,0 +1,21 @@
+﻿<Window x:Class="winmediaplayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        x:Name="Window"
+        Title="MainWindow" Height="900" Width="1546">
+    <Grid>
+        <MediaElement x:Name="mediaMain" LoadedBehavior="Manual" UnloadedBehavior="Stop" MediaOpened="MediaMain_MediaOpened" MediaEnded="MediaMain_MediaEnded" MediaFailed="MediaMain_MediaFailed" Grid.ColumnSpan="4" MouseLeftButtonUp="MediaMain_MouseLeftButtonUp" />
+        <Slider x:Name="sldrPlayTime" Margin="10,0,10,42" VerticalAlignment="Bottom" Thumb.DragStarted="SldrPlayTime_DragStarted" Thumb.DragCompleted="SldrPlayTime_DragCompleted" ValueChanged="sldrPlayTime_ValueChanged" Grid.ColumnSpan="4" />
+        <Button x:Name="btnStart" Content="▶" HorizontalAlignment="Left" Margin="137,0,0,8" Width="29" Height="23" VerticalAlignment="Bottom" Background="#FFFFF8F8" Click="btnStart_Click"/>
+        <Button x:Name="btnStop" Content="■" HorizontalAlignment="Left" Margin="168,0,0,8" Width="29" Height="23" VerticalAlignment="Bottom"  Background="#FFFFF8F8" Click="btnStop_Click"/>
+        <Button x:Name="btnPause" Content="II" HorizontalAlignment="Left" Margin="200,0,0,8" Width="29" Height="23" VerticalAlignment="Bottom" Background="#FFFFF8F8" Click="btnPause_Click"/>
+        <Button x:Name="btnSelectFile" Content="FileOpen" Margin="0,0,10,7" HorizontalAlignment="Right" Width="56" Height="24" VerticalAlignment="Bottom"  Background="White" Click="btnSelectFile_Click" Grid.Column="3"/>
+
+        <Label Content="Sound" HorizontalAlignment="Left" Margin="234,0,0,5" Height="26" VerticalAlignment="Bottom" Foreground="Blue"/>
+        <Slider x:Name="sldrVolume" HorizontalAlignment="Left" Margin="271,0,0,10" Width="100" Height="18" VerticalAlignment="Bottom" Maximum="1" LargeChange="0.1" Value="0.5" />
+        <Label x:Name="lblPlayTime" Content="00:00:00 / 00:00:00" HorizontalAlignment="Left" Margin="10,0,0,9" VerticalAlignment="Bottom" Width="120" Height="23" Foreground="Blue" />
+        <Button Content="FullScreen" HorizontalAlignment="Left" Margin="395,0,0,8" VerticalAlignment="Bottom" Background="#FFFFF8F8" Click="Button_Click" />
+        <Label  x:Name="lblMediaInfo" Content="" Margin="30,74,271,60" FontSize="20" FontStyle="Normal" FontFamily="Arial" FontWeight="Bold" Foreground="Blue" />
+    </Grid>
+
+</Window>
